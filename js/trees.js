@@ -23,4 +23,7 @@ document.getElementById("btn").addEventListener("click", function(e){
     e.preventDefault();
     console.log("Tree Height: " + tree.height.value);
     console.log("Tree Leaf: " + tree.leaf.value);
+    if (tree.height.value == "" || tree.leaf.value == "") {
+        alert("Suprise, Mothafucka! You forgot to FILL THAT SHIT OUT.");
+    };
 });
