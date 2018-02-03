@@ -11,10 +11,10 @@
 // If either of the input fields does not have a value in it when the user presses the enter key, or presses the button, then display an alert stating that both fields must have a value.
 
 // Grow your tree
-let getHeight = document.getElementById("height");
-let getLeaf = document.getElementById("leaf");
+const getHeight = document.getElementById("height");
+const getLeaf = document.getElementById("leaf");
 
-var tree = {
+let tree = {
     height: getHeight,
     leaf: getLeaf
 };
@@ -24,6 +24,15 @@ document.getElementById("btn").addEventListener("click", function(e){
     console.log("Tree Height: " + tree.height.value);
     console.log("Tree Leaf: " + tree.leaf.value);
     if (tree.height.value == "" || tree.leaf.value == "") {
-        alert("Suprise, Mothafucka! You forgot to FILL THAT SHIT OUT.");
+        alert("Please fill out both value fields.");
     };
+
+
+let roomToGrow = " "; // define a variable to add space
+let grow = (tree.height.value *2) - 1; //define a variable that takes user input height and determines character length(base width) of the tree
+for (var i = 1; i <= grow; i += 2){ // for loop loops through grow starting the counter at 1 because 0 didn't work, running unti the counter is less than or equal to the numerical value of grow(base width)
+    let roomToGrow2 = roomToGrow.repeat(tree.height.value - i / 2);// define variable roomToGrow2, repeating the user input tree.height.value - the counter divided by 2. 
+    let grow = (tree.leaf.value).repeat(i);
+    console.log(roomToGrow2, grow);
+}
 });
